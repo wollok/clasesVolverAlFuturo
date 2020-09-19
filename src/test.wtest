@@ -1,0 +1,24 @@
+import volver.*
+
+
+describe "Teste de volver al futuro" {
+	
+	const lentes = new Elemento( anioOrigen = 1985,descripcion = "estan rotos")
+	const perro = new Elemento( anioOrigen = 1980,descripcion = "ladra")
+	const arena = new Elemento(anioOrigen = 1985,descripcion = "Carlos Gesell")
+	const mate = new Elemento(anioOrigen = 2000,descripcion = "el termo se vende por separado")
+	
+	const sanMartin = new Lugar(nombre = "San Martin", habitantes = [])
+	const gesell = new Lugar(nombre = "Gesell",habitantes = [biff])
+	
+
+	test "marty viaja al 1969,¿cuantos años tiene ahora? " {
+		deLorean.viajarEnElTiempo(1969)
+		assert.equals(marty.edad(),30)
+	
+	}
+	test "marty viaja a gesell, y tiene algo de gesell"{
+		deLorean.viajarEnElEspacio(gesell)
+		assert.that(marty.tieneAlgoDe(gesell))
+	}
+}
