@@ -1,6 +1,6 @@
 class Elemento{
 	var property anioOrigen
-	var descripcion 
+	var property descripcion 
 	
 	method paradoja(){
 		if (self.esParadojico())
@@ -10,7 +10,7 @@ class Elemento{
 		descripcion = descripcion.reverse()
 	}
 	method esParadojico(){
-		return anioOrigen < tiempo.anioActual()
+		return anioOrigen > tiempo.anioActual()
 	}
 	method esDe(lugar){
 		return descripcion.contains(lugar.nombre())
@@ -40,7 +40,7 @@ class Lugar{
 	 	habitantes.remove(habitante)
 	 }
 	 
-	 method algunoTieneAlgoDelLugar(){
+	 method hayAlguienConAlgoDelLugar(){
 	 	return habitantes.any({personaje => personaje.tieneAlgoDe(self)})
 	 }
 }
@@ -48,8 +48,8 @@ class Lugar{
 class Personaje{
 	const elementosPersonales = []
 	const caracteristica
-	var edad
-	var altura
+	var property edad
+	var property altura
 	
 	method esMayor(){
 		return edad > 50
@@ -104,7 +104,7 @@ const biff = new Personaje(
 
 
 object deLorean{
-	var combustible = plutonio
+	var property combustible = plutonio
 	const pasajeros = [marty,docBrown]
 	var lugar = new Lugar(
 		nombre = "Hill Valley",
